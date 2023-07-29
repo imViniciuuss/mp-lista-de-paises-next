@@ -136,7 +136,7 @@ export default async function CountryPage({
 					</div>
 				) : (
 					<span className='text-xl text-red-500'>
-						Esse país não tem fronteiras!
+						Esse país não tem fronteiras!!
 					</span>
 				)}
 			</section>
