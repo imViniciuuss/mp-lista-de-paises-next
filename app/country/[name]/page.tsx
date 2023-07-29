@@ -102,7 +102,9 @@ export default async function CountryPage({
 							</div>
 							<div className='flex gap-1'>
 								{Object.values(country.languages).map((language) => (
-									<div className='bg-indigo-700 inline-block px-2 rounded-3xl font-normal text-base text-white'>
+									<div
+										key={language}
+										className='bg-indigo-700 inline-block px-2 rounded-3xl font-normal text-base text-white'>
 										{language}
 									</div>
 								))}
@@ -126,8 +128,8 @@ export default async function CountryPage({
 				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full container gap-2'>
 					{borderCountries?.map((border) => (
 						<CountryCard
-							key={border.name}
 							{...border}
+							key={border.name}
 						/>
 					))}
 				</div>
