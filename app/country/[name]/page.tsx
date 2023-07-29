@@ -125,14 +125,20 @@ export default async function CountryPage({
 				<h3 className='mt-12 text-3xl font-bold text-gray-800'>
 					Países que fazem fronteira
 				</h3>
-				<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full container gap-2'>
-					{borderCountries?.map((border) => (
-						<CountryCard
-							{...border}
-							key={border.name}
-						/>
-					))}
-				</div>
+				{borderCountries ? (
+					<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 w-full container gap-2'>
+						{borderCountries?.map((border) => (
+							<CountryCard
+								{...border}
+								key={border.name}
+							/>
+						))}
+					</div>
+				) : (
+					<span className='text-xl text-red-500'>
+						Esse país não tem fronteiras!
+					</span>
+				)}
 			</section>
 		</section>
 	);
